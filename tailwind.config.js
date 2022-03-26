@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Inter', ...fontFamily.sans],
+        sans: ['Inter var', ...fontFamily.sans],
       },
       colors: {
         primary: {
@@ -61,5 +62,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

@@ -1,31 +1,25 @@
-import * as React from 'react';
+import { Popover } from '@headlessui/react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
-
-const links = [
-  { href: '/', label: 'Route 1' },
-  { href: '/', label: 'Route 2' },
-];
+import NextImage from '@/components/NextImage';
 
 export default function Header() {
   return (
-    <header className='sticky top-0 z-50 bg-white'>
-      <div className='layout flex h-14 items-center justify-between'>
-        <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
-          Home
-        </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+    <Popover className='relative bg-white'>
+      <div className='flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
+        <div>
+          <UnstyledLink href='/' className='flex'>
+            <span className='sr-only'>Workflow</span>
+            <NextImage
+              className='h-8 w-auto sm:h-10'
+              src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
+              alt=''
+              width='60'
+              height='60'
+            />
+          </UnstyledLink>
+        </div>
       </div>
-    </header>
+    </Popover>
   );
 }

@@ -74,6 +74,8 @@ module.exports = {
         ],
       },
     ],
+    // "sort-imports": 0,
+    // "import/order": [2, { "alphabetize": { "order": "asc" } }]
     //#endregion  //*======== Import Sort ===========
   },
   globals: {
