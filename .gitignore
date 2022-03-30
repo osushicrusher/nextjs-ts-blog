@@ -39,6 +39,9 @@ robots.txt
 sitemap.xml
 
 public/images
+public/doc
 
 
 
+
+# src/pages/me.tsx
