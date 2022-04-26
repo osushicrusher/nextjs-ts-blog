@@ -4,10 +4,19 @@ import * as React from 'react';
 import clsxm from '@/lib/clsxm';
 
 type NextImageProps = (
-  | { width?: string | number; height?: string | number }
-  | { layout: 'fill'; width?: string | number; height?: string | number }
+  | { width?: string | number; height?: string | number; isRounded?: boolean }
+  | {
+      layout: 'fill';
+      width?: string | number;
+      height?: string | number;
+      isRounded?: boolean;
+    }
 ) &
   ImageProps;
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ');
+}
 
 export default function NextImage({
   className,
@@ -16,12 +25,16 @@ export default function NextImage({
   height,
   layout,
   alt,
+  isRounded,
   ...rest
 }: NextImageProps) {
   return (
     <div className={clsxm(className)}>
       <Image
-        className='transition-all duration-200'
+        className={classNames(
+          'transition-all duration-200',
+          isRounded ? 'rounded-full' : ''
+        )}
         src={src}
         width={width}
         height={height}

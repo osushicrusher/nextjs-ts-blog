@@ -1,14 +1,18 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { Category } from '@/@types/posts';
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
+type ProfileCategory = {
+  id: number;
+  name: string;
+  current: boolean;
+};
+
 type Props = {
-  categories: Category[];
-  tabIndex: string;
+  categories: ProfileCategory[];
+  tabIndex: number;
   onChange: Dispatch<SetStateAction<number>>;
 };
 
@@ -22,8 +26,7 @@ export default function CategoryTab({ categories, tabIndex, onChange }: Props) {
         >
           {categories.map((category, categoryIdx) => (
             <a
-              key={category.name}
-              href={category.href}
+              key={category.id}
               className={classNames(
                 tabIndex === category.id
                   ? 'text-indigo-500'
@@ -33,7 +36,7 @@ export default function CategoryTab({ categories, tabIndex, onChange }: Props) {
                 'group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10'
               )}
               aria-current={category.current ? 'page' : undefined}
-              onClick={() => onChange(categoryIdx)}
+              onClick={() => onChange(category.id)}
             >
               <span>{category.name}</span>
               <span

@@ -1,60 +1,80 @@
-import { InferGetStaticPropsType } from 'next';
-import * as React from 'react';
+import {
+  BookOpenIcon,
+  EmojiHappyIcon,
+  LightningBoltIcon,
+  MailIcon,
+} from '@heroicons/react/outline';
+import { useState } from 'react';
 
-import CategoryTab from '@/components/CategoryTab';
+import Action from '@/components/Action';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
+// import ImageList from '@/components/ImageList';
 import Layout from '@/components/layout/Layout';
-import Paginate from '@/components/Paginate';
-import PostList from '@/components/PostList';
-import Profile from '@/components/Profile';
+import Modal from '@/components/Modal';
+import PageHeading from '@/components/PageHeading';
 import Seo from '@/components/Seo';
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>;
+export default function Home() {
+  const actions = [
+    {
+      title: 'Profile',
+      href: '/profile',
+      icon: EmojiHappyIcon,
+      iconForeground: 'text-sky-700',
+      iconBackground: 'bg-sky-50',
+      description: '僕の情報はこちらです',
+      active: true,
+    },
+    {
+      title: 'Contact',
+      href: '/contact',
+      icon: MailIcon,
+      iconForeground: 'text-amber-700',
+      iconBackground: 'bg-amber-50',
+      description: 'ご連絡はこちらからお願いいたします',
+      active: true,
+    },
+    {
+      title: 'Blogs',
+      href: '#',
+      icon: BookOpenIcon,
+      iconForeground: 'text-teal-700',
+      iconBackground: 'bg-teal-50',
+      description: '技術や自身のことに関してまとめたものです(準備中)',
+      active: false,
+    },
+    {
+      title: 'Icons',
+      href: '#',
+      icon: LightningBoltIcon,
+      iconForeground: 'text-purple-700',
+      iconBackground: 'bg-purple-50',
+      description: '趣味で作っているアイコンやイラスト・ロゴなど(準備中)',
+      active: false,
+    },
+  ];
+  const [open, setOpen] = useState<boolean>(false);
 
-export default function Posts({ posts, categories }: Props) {
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo />
       <Header />
-      <main>
+      <main className='mt-5'>
         <div className='layout flex min-h-screen flex-col items-center justify-center'>
           <div className='min-h-screen'>
-            <Profile />
+            <PageHeading />
             <div className='mt-14'>
-              <CategoryTab categories={categories} />
-              <PostList posts={posts} />
-              <div className='mt-14'>
-                <Paginate />
-              </div>
+              <Action actions={actions} isOpen={open} setIsOpen={setOpen} />
             </div>
+            {/* <div className='mt-14'>
+              <ImageList />
+            </div> */}
           </div>
           <Footer />
         </div>
+        <Modal isOpen={open} setIsOpen={setOpen} />
       </main>
     </Layout>
   );
 }
-
-export const getStaticProps = async () => {
-  const key = {
-    headers: { 'X-MICROCMS-API-KEY': process.env.MICROCMS_API_KEY },
-  };
-
-  const fetchers = [
-    fetch(process.env.MICROCMS_BASE_URL + '/blog?offset=0&limit=10', key),
-    fetch(process.env.MICROCMS_BASE_URL + '/categories', key),
-  ];
-  const [postsData, categoriesData] = await Promise.all(fetchers);
-  const posts = await postsData.json();
-  const categories = await categoriesData.json();
-
-  return {
-    props: {
-      posts: posts.contents,
-      categories: categories.contents,
-      totalCount: posts.totalCount,
-    },
-  };
-};
