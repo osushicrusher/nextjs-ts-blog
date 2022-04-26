@@ -9,7 +9,7 @@ interface MicroCMSResponseType {
   contents: Post[];
 }
 
-interface Post {
+export interface Post {
   id: number;
   createdAt: string;
   updatedAt: string;
@@ -26,11 +26,14 @@ interface Post {
   minRead: number;
 }
 
-interface Category {
+export interface Category {
   id: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   revisedAt: string;
   name: string;
+  current: boolean;
+  color: string[];
+  href: string;
 }
