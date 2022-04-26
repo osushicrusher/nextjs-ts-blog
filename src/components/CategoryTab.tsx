@@ -26,7 +26,7 @@ export default function CategoryTab({ categories, tabIndex, onChange }: Props) {
               href={category.href}
               className={classNames(
                 tabIndex === category.id
-                  ? 'text-indigo-500'
+                  ? 'text-teal-500'
                   : 'text-gray-500 hover:text-gray-700',
                 categoryIdx === 0 ? 'rounded-l-lg' : '',
                 categoryIdx === categories.length - 1 ? 'rounded-r-lg' : '',
@@ -39,7 +39,7 @@ export default function CategoryTab({ categories, tabIndex, onChange }: Props) {
               <span
                 aria-hidden='true'
                 className={classNames(
-                  tabIndex === category.id ? 'bg-indigo-500' : 'bg-transparent',
+                  tabIndex === category.id ? 'bg-teal-500' : 'bg-transparent',
                   'absolute inset-x-0 bottom-0 h-0.5'
                 )}
               />

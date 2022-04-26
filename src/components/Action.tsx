@@ -36,7 +36,7 @@ export default function Action({ actions, isOpen, setIsOpen }: Props) {
               ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none'
               : '',
             action.active ? 'bg-white' : 'bg-slate-100',
-            'group relative  p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500'
+            'group relative  p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-teal-500'
           )}
           onClick={() => (!action.active ? setIsOpen(!isOpen) : false)}
         >

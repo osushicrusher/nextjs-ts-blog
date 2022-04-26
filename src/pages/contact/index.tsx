@@ -8,9 +8,11 @@ export default function Contact() {
       <div className='lg:absolute lg:inset-0'>
         <div className='lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
           <NextImage
-            className='h-56 w-full object-cover lg:absolute lg:h-full'
+            className='relative h-56 w-full object-cover lg:absolute lg:h-full'
             src='/images/cat4.jpg'
             alt=''
+            layout='fill'
+            objectFit='cover'
           />
         </div>
       </div>
@@ -41,7 +43,7 @@ export default function Contact() {
                     name='first-name'
                     id='first-name'
                     autoComplete='given-name'
-                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm'
                   />
                 </div>
               </div>
@@ -58,7 +60,7 @@ export default function Contact() {
                     name='email'
                     type='email'
                     autoComplete='email'
-                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm'
                   />
                 </div>
               </div>
@@ -75,7 +77,7 @@ export default function Contact() {
                     name='company'
                     id='company'
                     autoComplete='organization'
-                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm'
                   />
                 </div>
               </div>
@@ -101,7 +103,7 @@ export default function Contact() {
                     id='phone'
                     autoComplete='tel'
                     aria-describedby='phone-description'
-                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                    className='block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm'
                   />
                 </div>
               </div>
@@ -126,7 +128,7 @@ export default function Contact() {
                     name='how-can-we-help'
                     aria-describedby='how-can-we-help-description'
                     rows={4}
-                    className='block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm'
+                    className='block w-full rounded-md border border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm'
                     defaultValue=''
                   />
                 </div>
@@ -134,7 +136,7 @@ export default function Contact() {
               <div className='text-right sm:col-span-2'>
                 <button
                   type='submit'
-                  className='inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                  className='inline-flex justify-center rounded-md border border-transparent bg-teal-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2'
                 >
                   送信する
                 </button>
