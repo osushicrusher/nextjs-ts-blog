@@ -587,7 +587,7 @@ export default function ProfilePage() {
                             <dd className='mt-1 text-sm text-gray-900'>
                               <div className='divide-y divide-gray-200 rounded-md border border-gray-200'>
                                 <a
-                                  href={attachments.blog.github.href}
+                                  href={attachments.wordle.github.href}
                                   className='flex py-3 pl-3 pr-4 text-sm'
                                   target='_blank'
                                   rel='noopener noreferrer'
@@ -597,7 +597,7 @@ export default function ProfilePage() {
                                     className='h-5 w-5 flex-shrink-0 text-gray-400'
                                   />
                                   <span className='ml-2'>
-                                    {attachments.blog.github.name}
+                                    {attachments.wordle.github.name}
                                   </span>
                                 </a>
                               </div>
