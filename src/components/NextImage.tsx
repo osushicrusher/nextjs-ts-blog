@@ -1,4 +1,4 @@
-import Image, { ImageLoaderProps, ImageProps } from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
@@ -40,7 +40,7 @@ export default function NextImage({
         height={height}
         layout={layout}
         alt={alt}
-        loader={customLoader}
+        // loader={customLoader}
         placeholder='blur'
         blurDataURL={`data:image/svg+xml;base64,${toBase64(
           shimmer(width ? +width : 700, height ? +height : 475)
@@ -51,9 +51,9 @@ export default function NextImage({
   );
 }
 
-const customLoader = ({ src, width, quality }: ImageLoaderProps): string => {
-  return `${src}?w=${width}&q=${quality || 75}`;
-};
+// const customLoader = ({ src, width, quality }: ImageLoaderProps): string => {
+//   return `${src}?w=${width}&q=${quality || 75}`;
+// };
 
 const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
