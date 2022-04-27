@@ -1,4 +1,9 @@
-export default function Badge({ arg }) {
+import { Category } from '@/@types/posts';
+type Props = {
+  arg: Category;
+};
+
+export default function Badge({ arg }: Props) {
   return (
     <>
       <span

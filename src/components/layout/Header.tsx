@@ -36,7 +36,6 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
-import NextImage from '@/components/NextImage';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -49,13 +48,14 @@ export default function Example() {
         <div>
           <UnstyledLink href='/' className='flex'>
             <span className='sr-only'>Workflow</span>
-            <NextImage
-              className='h-8 w-auto sm:h-10'
-              src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-              alt=''
-              width='40'
-              height='40'
-            />
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-8 w-8 text-teal-500'
+              viewBox='0 0 20 20'
+              fill='currentColor'
+            >
+              <path d='M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z' />
+            </svg>
           </UnstyledLink>
         </div>
         <div className='-my-2 -mr-2 md:hidden'>
@@ -111,13 +111,14 @@ export default function Example() {
             <div className='px-5 pt-5 pb-6'>
               <div className='flex items-center justify-between'>
                 <div>
-                  <NextImage
-                    className='h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-                    alt='Workflow'
-                    width='40'
-                    height='40'
-                  />
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    className='h-8 w-8 text-teal-500'
+                    viewBox='0 0 20 20'
+                    fill='currentColor'
+                  >
+                    <path d='M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z' />
+                  </svg>
                 </div>
                 <div className='-mr-2'>
                   <Popover.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
@@ -129,12 +130,12 @@ export default function Example() {
             </div>
             <div className='py-6 px-5'>
               <div className='grid grid-cols-2 gap-4'>
-                <UnstyledLink
+                {/* <UnstyledLink
                   href='/blog'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   ブログ
-                </UnstyledLink>
+                </UnstyledLink> */}
                 <UnstyledLink
                   href='/profile'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'

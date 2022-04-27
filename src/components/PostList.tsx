@@ -1,7 +1,12 @@
 import Badge from '@/components/Badge';
 import NextImage from '@/components/NextImage';
 
-function classNames(...classes) {
+import { Post } from '@/@types/posts';
+type Props = {
+  posts: Post[];
+};
+
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -13,7 +18,7 @@ const alignDate = (date: string) => {
   return year + '/' + month + '/' + day;
 };
 
-export default function PostList({ posts }) {
+export default function PostList({ posts }: Props) {
   return (
     <div className='w-full divide-y divide-gray-200 overflow-hidden rounded-lg shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0'>
       {posts.map((post, postIdx) => (
@@ -43,7 +48,7 @@ export default function PostList({ posts }) {
               <Badge arg={post.categories[0]} />
               <h4 className='text-lg font-bold'>
                 <span className='absolute inset-0' aria-hidden='true' />
-                <a href={`/${post.id}`} className='focus:outline-none'>
+                <a href={`/blog/${post.id}`} className='focus:outline-none'>
                   <span className='absolute inset-0' aria-hidden='true' />
                   {post.title}
                 </a>
