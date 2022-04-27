@@ -1,3 +1,4 @@
+import { GetStaticPropsContext } from 'next';
 import * as React from 'react';
 
 import Header from '@/components/layout/Header';
@@ -7,8 +8,11 @@ import Profile from '@/components/Profile';
 import Seo from '@/components/Seo';
 
 import { Post } from '@/@types/posts';
+type Props = {
+  post: Post;
+};
 
-export default function PostPage({ post }: Post) {
+export default function PostPage({ post }: Props) {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
@@ -63,14 +67,15 @@ export const getStaticPaths = async () => {
 };
 
 // データを取得
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
+  if (context.params === undefined) return;
   const key = {
     headers: { 'X-MICROCMS-API-KEY': process.env.MICROCMS_API_KEY },
   };
   const res = await fetch(
-    process.env.MICROCMS_BASE_URL + '/blog/' + `${params.id}`,
+    process.env.MICROCMS_BASE_URL + '/blog/' + `${context.params.id}`,
     key
   );
   const post = await res.json();
