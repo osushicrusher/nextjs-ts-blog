@@ -1,12 +1,30 @@
 import ErrorModal from '@/components/form/ErrorModal';
 import Form from '@/components/form/Form';
+import Modal from '@/components/form/Modal';
 import Header from '@/components/layout/Header';
 import NextImage from '@/components/NextImage';
 
+import { Inputs } from '@/@types/form';
+import { useErrorModal } from '@/infrastructure/recoil/useErrorModal';
 import { useModal } from '@/infrastructure/recoil/useModal';
 
 export default function Contact() {
   const { modalState, modalToggle } = useModal();
+  const { errorModalState, errorModalToggle } = useErrorModal();
+  const sendMail = async (data: Inputs) => {
+    try {
+      const res = await fetch('api/sendMail', {
+        body: JSON.stringify({ data }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+      return await res.json();
+    } catch (err) {
+      // console.error(err);
+    }
+  };
   return (
     <div className='relative bg-white'>
       <Header />
@@ -21,8 +39,9 @@ export default function Contact() {
           />
         </div>
       </div>
-      <Form />
-      <ErrorModal isOpen={modalState} setIsOpen={modalToggle} />
+      <Form onSubmit={sendMail} />
+      <ErrorModal isOpen={errorModalState} setIsOpen={errorModalToggle} />
+      <Modal isOpen={modalState} setIsOpen={modalToggle} />
     </div>
   );
 }

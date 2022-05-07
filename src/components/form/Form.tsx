@@ -1,28 +1,31 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+import { Inputs } from '@/@types/form';
+import { useErrorModal } from '@/infrastructure/recoil/useErrorModal';
 import { useModal } from '@/infrastructure/recoil/useModal';
 
-type Inputs = {
-  firstName: string;
-  email: string;
-  company: string;
-  phone: string;
-  inquiry: string;
+type Props = {
+  onSubmit: (data: Inputs) => void;
 };
 
-export default function Form() {
+export default function Form({ onSubmit }: Props) {
   const { modalOpen } = useModal();
+  const { errorModalOpen } = useErrorModal();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
-  const submitForm: SubmitHandler<Inputs> = () => {
+  const submitForm: SubmitHandler<Inputs> = (data) => {
     if (Object.keys(errors).length !== 0) {
-      modalOpen();
+      errorModalOpen();
       return;
     }
+    onSubmit(data);
+    reset();
+    modalOpen();
   };
   return (
     <div className='relative py-16 px-4 sm:py-24 sm:px-6 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32'>
