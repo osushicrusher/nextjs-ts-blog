@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/solid';
 import React, { useState } from 'react';
 
+import HorizontalLinkCard from '@/components/HorizontalLinkCard';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -45,7 +46,7 @@ const timeline = [
   {
     id: 1,
     type: eventTypes.work,
-    target: '都内SaaS開発企業 入社・現職',
+    target: '株式会社イデア・レコード 入社・現職',
     date: '2021年4月〜',
     datetime: '2021-04',
   },
@@ -350,6 +351,17 @@ export default function ProfilePage() {
                     </div>
                   </div>
                 </section>
+                <div className='mt-12 bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6'>
+                  <h2
+                    id='article-title'
+                    className='text-lg font-medium text-gray-900'
+                  >
+                    記事
+                  </h2>
+                  <div className='mt-6'>
+                    <HorizontalLinkCard />
+                  </div>
+                </div>
               </div>
               <div className={tabIndex !== 2 ? 'hidden' : ''}>
                 <div className='space-y-6 lg:col-span-2 lg:col-start-1'>
@@ -617,3 +629,6 @@ export default function ProfilePage() {
     </>
   );
 }
+
+// zennのRSS取得する
+// export const getStaticProps:

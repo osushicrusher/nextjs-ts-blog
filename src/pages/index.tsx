@@ -67,9 +67,6 @@ export default function Home() {
             <div className='mt-14'>
               <Action actions={actions} isOpen={open} setIsOpen={setOpen} />
             </div>
-            {/* <div className='mt-14'>
-              <ImageList />
-            </div> */}
           </div>
           <Footer />
         </div>
