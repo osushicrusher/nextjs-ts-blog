@@ -5,7 +5,7 @@ import '@/styles/globals.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
 
-import { DebugObserver } from '@/infrastructure/recoil/debugObserver';
+// import { DebugObserver } from '@/infrastructure/recoil/debugObserver';
 
 /**
  * !STARTERCONF info
@@ -15,7 +15,7 @@ import { DebugObserver } from '@/infrastructure/recoil/debugObserver';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <DebugObserver />
+      {/* <DebugObserver /> */}
       <Component {...pageProps} />
     </RecoilRoot>
   );
