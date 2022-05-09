@@ -30,7 +30,6 @@
 //   );
 // }
 
-/* This example requires Tailwind CSS v2.0+ */
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
@@ -140,7 +139,13 @@ export default function Example() {
                   href='/profile'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
-                  プロフィール
+                  Profile
+                </UnstyledLink>
+                <UnstyledLink
+                  href='/contact'
+                  className='text-base font-medium text-gray-900 hover:text-gray-700'
+                >
+                  Contact
                 </UnstyledLink>
               </div>
             </div>

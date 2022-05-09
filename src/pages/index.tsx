@@ -1,9 +1,4 @@
-import {
-  BookOpenIcon,
-  EmojiHappyIcon,
-  LightningBoltIcon,
-  MailIcon,
-} from '@heroicons/react/outline';
+import { EmojiHappyIcon, MailIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 
 import Action from '@/components/Action';
@@ -35,24 +30,24 @@ export default function Home() {
       description: 'ご連絡はこちらからお願いいたします',
       active: true,
     },
-    {
-      title: 'Blogs',
-      href: '#',
-      icon: BookOpenIcon,
-      iconForeground: 'text-teal-700',
-      iconBackground: 'bg-teal-50',
-      description: '技術や自身のことに関してまとめたものです(準備中)',
-      active: false,
-    },
-    {
-      title: 'Icons',
-      href: '#',
-      icon: LightningBoltIcon,
-      iconForeground: 'text-purple-700',
-      iconBackground: 'bg-purple-50',
-      description: '趣味で作っているアイコンやイラスト・ロゴなど(準備中)',
-      active: false,
-    },
+    // {
+    //   title: 'Blogs',
+    //   href: '#',
+    //   icon: BookOpenIcon,
+    //   iconForeground: 'text-teal-700',
+    //   iconBackground: 'bg-teal-50',
+    //   description: '技術や自身のことに関してまとめたものです(準備中)',
+    //   active: false,
+    // },
+    // {
+    //   title: 'Icons',
+    //   href: '#',
+    //   icon: LightningBoltIcon,
+    //   iconForeground: 'text-purple-700',
+    //   iconBackground: 'bg-purple-50',
+    //   description: '趣味で作っているアイコンやイラスト・ロゴなど(準備中)',
+    //   active: false,
+    // },
   ];
   const [open, setOpen] = useState<boolean>(false);
 

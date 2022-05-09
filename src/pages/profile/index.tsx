@@ -1,11 +1,16 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/solid';
+import {
+  AcademicCapIcon,
+  BriefcaseIcon,
+  TruckIcon,
+} from '@heroicons/react/solid';
 import React, { useState } from 'react';
 
 import HorizontalLinkCard from '@/components/HorizontalLinkCard';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
+// import ImageList from '@/components/ImageList'
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import PageHeading from '@/components/PageHeading';
@@ -284,6 +289,7 @@ export default function ProfilePage() {
                               </ul>
                             </dd> */}
                           {/* </div> */}
+                          {/* <ImageList /> */}
                         </dl>
                       </div>
                     </div>
@@ -386,8 +392,7 @@ export default function ProfilePage() {
                               詳細
                             </dt>
                             <dd className='mt-1 text-sm text-gray-900'>
-                              使用言語はTypeScript、フレームワークにNext.js、CSSフレームワークにTailwindCSS、テスティングフレームワークにJestを使用しています。
-                              Blog記事を表示するページはSSGを採用しています。
+                              今ご覧になられているこのWebサイトです。使用言語はTypeScript、フレームワークにNext.js、CSSフレームワークにTailwindCSS、テスティングフレームワークにJestを使用しています。
                             </dd>
                           </div>
                           <div className='sm:col-span-2'>
@@ -496,7 +501,23 @@ export default function ProfilePage() {
                       </div>
                     </div>
                   </section>
-                  <section aria-labelledby='applicant-information-title'>
+                  <div className='relative block w-full rounded-lg border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                    {/* <div className="flex justify-center">
+                      <TruckIcon
+                        className='h-5 w-5 text-black bg-yellow-400'
+                      />
+                    </div> */}
+                    <div className='mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100'>
+                      <TruckIcon
+                        className='h-6 w-6 text-green-600'
+                        aria-hidden='true'
+                      />
+                    </div>
+                    <span className='mt-2 block text-sm font-medium text-gray-900'>
+                      currently working on a new one...
+                    </span>
+                  </div>
+                  {/* <section aria-labelledby='applicant-information-title'>
                     <div className='bg-white shadow sm:rounded-lg'>
                       <div className='px-4 py-5 sm:px-6'>
                         <h2
@@ -572,27 +593,6 @@ export default function ProfilePage() {
                             </dd>
                           </div>
                           <div className='sm:col-span-2'>
-                            {/* <dt className='text-sm font-medium text-gray-500'>
-                              zenn記事
-                            </dt>
-                            <dd className='mt-1 text-sm text-gray-900'>
-                              <div className='divide-y divide-gray-200 rounded-md border border-gray-200'>
-                                <a
-                                  href={attachments.wordle.zenn.href}
-                                  className='flex py-3 pl-3 pr-4 text-sm'
-                                  target='_blank'
-                                  rel='noopener noreferrer'
-                                >
-                                  <NewspaperIcon
-                                    className='h-5 w-5 flex-shrink-0 text-gray-400'
-                                    aria-hidden='true'
-                                  />
-                                  <span className='ml-2'>
-                                    {attachments.wordle.zenn.name}
-                                  </span>
-                                </a>
-                              </div>
-                            </dd> */}
                             <dt className='mt-3 text-sm font-medium text-gray-500'>
                               GitHub
                             </dt>
@@ -618,7 +618,7 @@ export default function ProfilePage() {
                         </dl>
                       </div>
                     </div>
-                  </section>
+                  </section> */}
                 </div>
               </div>
             </div>
