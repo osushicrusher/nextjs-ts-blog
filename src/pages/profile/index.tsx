@@ -18,6 +18,8 @@ import ProfileCategoryTab from '@/components/ProfileCategoryTab';
 // import Profile from '@/components/Profile';
 import Seo from '@/components/Seo';
 
+import classNames from '@/utils/classNames';
+
 const attachments = {
   resume: { name: '職務経歴書_吉野光.pdf', href: '/doc/resume.pdf' },
   blog: {
@@ -92,10 +94,6 @@ const profile = {
   description:
     'フロントエンドの技術に興味があり,日々勉強しています。最近は特にNext.jsとTypeScriptの勉強中です。',
 };
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function ProfilePage() {
   const [tabIndex, setTabIndex] = useState<number>(1);
