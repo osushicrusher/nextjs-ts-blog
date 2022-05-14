@@ -7,7 +7,7 @@ import NextImage from '@/components/NextImage';
 import Profile from '@/components/Profile';
 import Seo from '@/components/Seo';
 
-import { Post } from '@/@types/posts';
+import { Post } from '@/@types/MicrocmsPosts';
 type Props = {
   post: Post;
 };
