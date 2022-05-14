@@ -4,7 +4,7 @@ import Modal from '@/components/form/Modal';
 import Header from '@/components/layout/Header';
 import NextImage from '@/components/NextImage';
 
-import { Inputs } from '@/@types/Form';
+import { Inputs } from '@/@types/form';
 import { useErrorModal } from '@/infrastructure/recoil/useErrorModal';
 import { useModal } from '@/infrastructure/recoil/useModal';
 

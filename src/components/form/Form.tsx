@@ -1,7 +1,7 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { Inputs } from '@/@types/Form';
+import { Inputs } from '@/@types/form';
 import { useErrorModal } from '@/infrastructure/recoil/useErrorModal';
 import { useModal } from '@/infrastructure/recoil/useModal';
 
