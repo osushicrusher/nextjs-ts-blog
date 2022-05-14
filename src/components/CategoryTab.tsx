@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { Category } from '@/@types/posts';
+import { Category } from '@/@types/MicrocmsPosts';
 import classNames from '@/utils/classNames';
 
 type Props = {

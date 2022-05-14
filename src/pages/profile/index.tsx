@@ -5,7 +5,9 @@ import {
   BriefcaseIcon,
   TruckIcon,
 } from '@heroicons/react/solid';
+import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
+import Parser from 'rss-parser';
 
 import HorizontalLinkCard from '@/components/HorizontalLinkCard';
 import Footer from '@/components/layout/Footer';
@@ -95,7 +97,18 @@ const profile = {
     'フロントエンドの技術に興味があり,日々勉強しています。最近は特にNext.jsとTypeScriptの勉強中です。',
 };
 
-export default function ProfilePage() {
+type Content = {
+  title: string;
+  creator: string;
+  link: string;
+  imageUrl: string;
+};
+
+type Props = {
+  contents: Content[];
+};
+
+export default function ProfilePage({ contents }: Props) {
   const [tabIndex, setTabIndex] = useState<number>(1);
   return (
     <>
@@ -363,7 +376,7 @@ export default function ProfilePage() {
                     記事
                   </h2>
                   <div className='mt-6'>
-                    <HorizontalLinkCard />
+                    <HorizontalLinkCard contents={contents} />
                   </div>
                 </div>
               </div>
@@ -629,4 +642,49 @@ export default function ProfilePage() {
 }
 
 // zennのRSS取得する
-// export const getStaticProps:
+export const getStaticProps: GetStaticProps = async () => {
+  const parser = new Parser();
+
+  // zenn記事
+  const feedZenn = await parser.parseURL('https://zenn.dev/osushioichii/feed');
+  const feedZennFixed = feedZenn.items.map((feed) => {
+    return {
+      title: feed.title,
+      creator: feed.creator,
+      link: feed.link,
+      imageUrl: '/svg/zenn.svg',
+      // isoDate: feed.isoDate
+    };
+  });
+
+  // Medium
+  const feedMedium = await parser.parseURL(
+    'https://medium.com/feed/@osushicrusher'
+  );
+  const feedMediumFixed = feedMedium.items.map((feed) => {
+    return {
+      title: feed.title,
+      creator: feed.creator,
+      link: feed.link,
+      imageUrl: '/svg/medium.svg',
+      // isoDate: feed.isoDate
+    };
+  });
+
+  // wantedly
+  const posts = [
+    {
+      title: '活躍が目覚ましいイデア・レコードの若手エンジニア対談',
+      creator: '株式会社イデア・レコード',
+      imageUrl: '/svg/Wantedly_Mark_LightBG.svg',
+      link: 'https://www.wantedly.com/companies/idearecord2/post_articles/395397',
+      // isoDate: '2021-08-21T05:03:49.000Z'
+    },
+  ];
+
+  return {
+    props: {
+      contents: [...posts, ...feedZennFixed, ...feedMediumFixed],
+    },
+  };
+};
