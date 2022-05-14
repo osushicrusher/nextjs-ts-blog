@@ -1,4 +1,4 @@
-import { Category } from '@/@types/posts';
+import { Category } from '@/@types/MicrocmsPosts';
 type Props = {
   arg: Category;
 };
