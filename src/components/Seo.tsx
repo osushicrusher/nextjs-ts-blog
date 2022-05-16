@@ -6,8 +6,8 @@ import { openGraph } from '@/lib/helper';
 // !STARTERCONF Change these default meta
 const defaultMeta = {
   title: 'Hikaru Yoshino',
-  siteName: 'ikaru Yoshino',
-  description: 'ikaru Yoshino',
+  siteName: 'Hikaru Yoshino',
+  description: 'Hikaru Yoshino',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
   url: '',
   type: 'website',
@@ -46,7 +46,7 @@ export default function Seo(props: SeoProps) {
       <meta content={meta.description} name='description' />
       <meta property='og:url' content={`${meta.url}${router.asPath}`} />
       <link rel='canonical' href={`${meta.url}${router.asPath}`} />
-      <link rel='stylesheet' href='https://rsms.me/inter/inter.css'></link>
+      {/* <link rel='stylesheet' href='https://rsms.me/inter/inter.css'></link> */}
       {/* Open Graph */}
       <meta property='og:type' content={meta.type} />
       <meta property='og:site_name' content={meta.siteName} />
