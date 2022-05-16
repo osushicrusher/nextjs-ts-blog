@@ -27,8 +27,6 @@ export default function PageHeading() {
               src={profile.avatar}
               alt=''
               layout='fill'
-              width={128}
-              height={128}
               objectFit='contain'
               isRounded={true}
             />
