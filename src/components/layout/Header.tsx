@@ -34,11 +34,12 @@ import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 
+import BadgeWithIcon from '@/components/BadgeWithIcon';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 import classNames from '@/utils/classNames';
 
-export default function Example() {
+export default function Header() {
   return (
     <Popover className='relative bg-white'>
       <div className='flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
@@ -75,18 +76,26 @@ export default function Example() {
                 </>
               )}
             </Popover>
-            {/* <UnstyledLink
-              href='/blog'
-              className='text-base font-medium text-gray-500 hover:text-gray-900'
-            >
-              ブログ
-            </UnstyledLink>
             <UnstyledLink
               href='/profile'
               className='text-base font-medium text-gray-500 hover:text-gray-900'
             >
-              プロフィール
-            </UnstyledLink> */}
+              Profile
+            </UnstyledLink>
+            <UnstyledLink
+              href='/contact'
+              className='text-base font-medium text-gray-500 hover:text-gray-900'
+            >
+              Contact
+            </UnstyledLink>
+            <UnstyledLink
+              href='https://www.buymeacoffee.com/yoshi2no'
+              className='text-base font-medium text-gray-500 hover:text-gray-900'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <BadgeWithIcon text='Buy me a coffee' />
+            </UnstyledLink>
           </Popover.Group>
         </div>
       </div>
@@ -126,7 +135,7 @@ export default function Example() {
               </div>
             </div>
             <div className='py-6 px-5'>
-              <div className='grid grid-cols-2 gap-4'>
+              <div className='grid grid-cols-2 gap-6'>
                 {/* <UnstyledLink
                   href='/blog'
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
@@ -144,6 +153,14 @@ export default function Example() {
                   className='text-base font-medium text-gray-900 hover:text-gray-700'
                 >
                   Contact
+                </UnstyledLink>
+                <UnstyledLink
+                  href='https://www.buymeacoffee.com/yoshi2no'
+                  className='text-base font-medium text-gray-500 hover:text-gray-900'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <BadgeWithIcon text='Buy me a coffee' />
                 </UnstyledLink>
               </div>
             </div>
