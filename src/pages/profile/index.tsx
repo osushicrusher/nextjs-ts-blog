@@ -88,9 +88,7 @@ const profile = {
     'フロントエンドの技術に興味があり,日々勉強しています。最近は特にNext.jsとTypeScriptの勉強中です。',
 };
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
+import classNames from '@/utils/classNames';
 
 export default function ProfilePage() {
   const [tabIndex, setTabIndex] = useState<number>(1);

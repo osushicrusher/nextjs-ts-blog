@@ -37,9 +37,7 @@ import { Fragment } from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
+import classNames from '@/utils/classNames';
 
 export default function Example() {
   return (

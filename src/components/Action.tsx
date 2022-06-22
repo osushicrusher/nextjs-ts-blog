@@ -1,5 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
+import classNames from '@/utils/classNames';
+
 type ActionType = {
   title: string;
   href: string;
@@ -15,10 +17,6 @@ type Props = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
 
 export default function Action({ actions, isOpen, setIsOpen }: Props) {
   return (

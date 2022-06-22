@@ -6,9 +6,7 @@ type Props = {
   posts: Post[];
 };
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
+import classNames from '@/utils/classNames';
 
 // 時間の表記を整形する
 const alignDate = (date: string) => {
