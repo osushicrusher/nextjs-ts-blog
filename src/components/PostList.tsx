@@ -1,12 +1,11 @@
 import Badge from '@/components/Badge';
 import NextImage from '@/components/NextImage';
 
-import { Post } from '@/@types/posts';
+import { Post } from '@/@types/MicrocmsPosts';
+import classNames from '@/utils/classNames';
 type Props = {
   posts: Post[];
 };
-
-import classNames from '@/utils/classNames';
 
 // 時間の表記を整形する
 const alignDate = (date: string) => {

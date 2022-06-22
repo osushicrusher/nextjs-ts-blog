@@ -3,6 +3,8 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import classNames from '@/utils/classNames';
+
 type NextImageProps = (
   | { width?: string | number; height?: string | number; isRounded?: boolean }
   | {
@@ -13,8 +15,6 @@ type NextImageProps = (
     }
 ) &
   ImageProps;
-
-import classNames from '@/utils/classNames';
 
 export default function NextImage({
   className,
