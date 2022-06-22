@@ -54,6 +54,11 @@ export default function Home() {
       active: false,
     },
   ];
+  const profile = {
+    name: 'Hikaru Yoshino',
+    avatar: '/images/profilephoto.jpeg',
+    backgroundImage: '/images/cat5.jpg',
+  };
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -63,7 +68,7 @@ export default function Home() {
       <main className='mt-5'>
         <div className='layout flex min-h-screen flex-col items-center justify-center'>
           <div className='min-h-screen'>
-            <PageHeading />
+            <PageHeading profile={profile} />
             <div className='mt-14'>
               <Action actions={actions} isOpen={open} setIsOpen={setOpen} />
             </div>

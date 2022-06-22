@@ -1,13 +1,14 @@
 import NextImage from '@/components/NextImage';
 
-const profile = {
-  name: 'Hikaru Yoshino',
-  email: 'ricardo.cooper@example.com',
-  avatar: '/images/profilephoto.jpeg',
-  backgroundImage: '/images/cat5.jpg',
+type Props = {
+  profile: {
+    name: string;
+    avatar: string;
+    backgroundImage: string;
+  };
 };
 
-export default function PageHeading() {
+export default function PageHeading({ profile }: Props) {
   return (
     <div>
       <div>

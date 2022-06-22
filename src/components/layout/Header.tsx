@@ -1,36 +1,3 @@
-// import { Popover } from '@headlessui/react';
-
-// import UnstyledLink from '@/components/links/UnstyledLink';
-// import NextImage from '@/components/NextImage';
-
-// export default function Header() {
-//   return (
-//     <Popover className='relative bg-white'>
-//       <div className='flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10'>
-//         <div>
-//           <UnstyledLink href='/' className='flex'>
-//             <span className='sr-only'>Workflow</span>
-//             <NextImage
-//               className='h-8 w-auto sm:h-10'
-//               src='https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg'
-//               alt=''
-//               width='50'
-//               height='50'
-//             />
-//           </UnstyledLink>
-//         </div>
-//         <UnstyledLink href="/blog" className="text-base font-medium text-gray-500 hover:text-gray-900">
-//           ブログ
-//         </UnstyledLink>
-//         <UnstyledLink href="/profile" className="text-base font-medium text-gray-500 hover:text-gray-900">
-//           プロフィール
-//         </UnstyledLink>
-//       </div>
-//     </Popover>
-//   );
-// }
-
-/* This example requires Tailwind CSS v2.0+ */
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';

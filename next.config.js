@@ -3,6 +3,10 @@ module.exports = {
   eslint: {
     dirs: ['src'],
   },
+  i18n: {
+    locales: ['en', 'ja'],
+    defaultLocale: 'ja',
+  },
 
   reactStrictMode: true,
 
