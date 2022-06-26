@@ -1,6 +1,7 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TruckIcon } from '@heroicons/react/solid';
+import { GetStaticProps } from 'next';
 import React, { useState } from 'react';
 import Parser from 'rss-parser';
 
