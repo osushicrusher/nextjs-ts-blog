@@ -1,10 +1,11 @@
 import { EmojiHappyIcon, MailIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 
+import { useProfile } from '@/hooks/useProfile';
+
 import Action from '@/components/Action';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
-// import ImageList from '@/components/ImageList';
 import Layout from '@/components/layout/Layout';
 import Modal from '@/components/Modal';
 import PageHeading from '@/components/PageHeading';
@@ -49,6 +50,7 @@ export default function Home() {
     //   active: false,
     // },
   ];
+  const { pageHeadingData } = useProfile();
   const [open, setOpen] = useState<boolean>(false);
 
   return (
@@ -58,7 +60,7 @@ export default function Home() {
       <main className='mt-5'>
         <div className='layout flex min-h-screen flex-col items-center justify-center'>
           <div className='min-h-screen'>
-            <PageHeading />
+            <PageHeading profile={pageHeadingData} />
             <div className='mt-14'>
               <Action actions={actions} isOpen={open} setIsOpen={setOpen} />
             </div>

@@ -13,14 +13,20 @@ type Props = {
 };
 
 export default function LogoList({ logos }: Props) {
-  return logos.map((logo) => (
-    <NextImage
-      className={logo.style}
-      src={logo.src}
-      height={logo.height}
-      width={logo.width}
-      alt={logo.alt}
-      key={logo.src}
-    />
-  ));
+  return (
+    <>
+      {logos.map((logo) => {
+        return (
+          <NextImage
+            className={logo.style}
+            src={logo.src}
+            height={logo.height}
+            width={logo.width}
+            alt={logo.alt}
+            key={logo.src}
+          />
+        );
+      })}
+    </>
+  );
 }

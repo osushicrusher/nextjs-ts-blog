@@ -15,7 +15,6 @@ import Layout from '@/components/layout/Layout';
 import LogoList from '@/components/LogoList';
 import PageHeading from '@/components/PageHeading';
 import ProfileCategoryTab from '@/components/ProfileCategoryTab';
-// import Profile from '@/components/Profile';
 import Seo from '@/components/Seo';
 
 type Content = {
@@ -59,7 +58,6 @@ export default function ProfilePage({ contents }: Props) {
             <div className='mx-auto grid max-w-3xl grid-cols-1 gap-6 lg:grid-flow-col-dense'>
               <div className={tabIndex !== 1 ? 'hidden' : ''}>
                 <div className='space-y-6 lg:col-span-2 lg:col-start-1'>
-                  {/* Description list*/}
                   <section aria-labelledby='applicant-information-title'>
                     <div className='bg-white shadow sm:rounded-lg'>
                       <div className='px-4 py-5 sm:px-6'>
