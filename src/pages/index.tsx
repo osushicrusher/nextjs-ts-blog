@@ -56,10 +56,10 @@ export default function Home() {
   return (
     <Layout>
       <Seo />
-      <Header />
       <main className='mt-5'>
         <div className='layout flex min-h-screen flex-col items-center justify-center'>
           <div className='min-h-screen'>
+            <Header />
             <PageHeading profile={pageHeadingData} />
             <div className='mt-14'>
               <Action actions={actions} isOpen={open} setIsOpen={setOpen} />

@@ -45,7 +45,9 @@ export default function ProfilePage({ contents }: Props) {
       <Layout>
         <Seo />
         <div className='mx-auto min-h-full px-6 lg:max-w-5xl'>
-          <Header />
+          <div className='mx-auto max-w-3xl'>
+            <Header />
+          </div>
           <div className='mx-auto max-w-3xl'>
             <PageHeading profile={pageHeadingData} />
             <ProfileCategoryTab
